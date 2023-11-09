@@ -6,17 +6,13 @@
 #    By: ohortal- <ohortal-@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/08 11:54:11 by ohortal-          #+#    #+#              #
-#    Updated: 2023/11/08 13:50:17 by ohortal-         ###   ########.fr        #
+#    Updated: 2023/11/09 11:38:35 by ohortal-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SOURCE = fill_a_to_b.c ft_atol.c ft_stack_input_check.c main.c massive_sort.c reverse_rotate.c rotate.c sort_3.c sort_5.c stack_push.c stack_sort_mov.c stack.c swap.c utils.c
 
 OBJS = $(SOURCE:.c=.o)
-
-BONUS = checker.c fill_a_to_b.c ft_atol.c ft_stack_input_check.c massive_sort.c reverse_rotate.c rotate.c sort_3.c sort_5.c stack_push.c stack_sort_mov.c stack.c swap.c utils.c
-
-BONUS_OBJS = $(BONUS:.c=.o)
 
 CC = gcc
 
@@ -30,8 +26,6 @@ NAME = push_swap
 
 DEPS= $(OBJS:.o=.d)
 
-DEPS_BONUS= $(BONUS_OBJS:.o=.d)
-
 %.o: %.c $(INCLUDE)
 	@$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
 
@@ -44,7 +38,7 @@ $(NAME): $(OBJS)
 
 clean :
 	@make clean -C ./libft
-	@$(RM) $(OBJS) $(BONUS_OBJS) $(DEPS) $(DEPS_BONUS) bonus
+	@$(RM) $(OBJS) $(DEPS) 
 
 fclean: clean
 	@make fclean -C ./libft
@@ -52,10 +46,5 @@ fclean: clean
 	@$(RM) checker
 
 re: fclean $(NAME)
-
--include $(DEPS_BONUS)
-bonus: $(BONUS_OBJS)
-	@make -C ./libft
-	$(CC) $(CFLAGS) $(INCLUDE) $(BONUS_OBJS) -o checker
 
 .PHONY: all clean fclean re
