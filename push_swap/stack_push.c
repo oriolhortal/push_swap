@@ -29,7 +29,7 @@ void	pa(t_stack **stack_a, t_stack **stack_b)
 void	pb(t_stack **stack_b, t_stack **stack_a)
 {
 	push_stack(stack_b, stack_a);
-	ft_putstr_fd("pa\n", 1);
+	ft_putstr_fd("pb\n", 1);
 }
 
 void	printstack(t_stack *head)

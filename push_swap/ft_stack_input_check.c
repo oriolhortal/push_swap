@@ -88,7 +88,7 @@ t_stack	*generate_a(char **arg)
 	size = 0;
 	a = NULL;
 	while (arg[size] != 0)
-		size ++;
+		size++;
 	if (inputcheck(arg))
 	{
 		while (size-- > 1)

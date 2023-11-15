@@ -6,7 +6,7 @@
 /*   By: ohortal- <ohortal-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 16:15:15 by ohortal-          #+#    #+#             */
-/*   Updated: 2023/11/06 14:50:47 by ohortal-         ###   ########.fr       */
+/*   Updated: 2023/11/14 12:05:07 by ohortal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -56,7 +56,7 @@ t_stack	*near_edge(t_stack **a, int chunk, int s_chunk)
 	t_stack	*tmp;
 
 	tmp = *a;
-	while (tmp && tmp->index > (s_chunk *(chunk + 1)))
+	while (tmp && tmp->index > (s_chunk * (chunk + 1)))
 		tmp = tmp->next;
 	up = tmp;
 	down = up;
@@ -67,7 +67,7 @@ t_stack	*near_edge(t_stack **a, int chunk, int s_chunk)
 		tmp = tmp->next;
 	}
 	if (up->pos < ft_stacksize(*a) / 2 && (up->index < \
-				(s_chunk *(chunk + 1)) + 1))
+				(s_chunk * (chunk + 1)) + 1))
 		return (up);
 	return (down);
 }

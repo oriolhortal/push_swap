@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "push_swap.h"
 
-void	last_a_move_update(t_stack **a, t_stack **b, int *down)
+void	last_a_mov_update(t_stack **a, t_stack **b, int *down)
 {
 	if (*b)
 	{
@@ -65,7 +65,7 @@ void	try_b_to_a(t_stack **a, t_stack **b)
 	{
 		b_position(a, b, &down);
 		pa(a, b);
-		last_a_move_update(a, b, &down);
+		last_a_mov_update(a, b, &down);
 	}
 }
 

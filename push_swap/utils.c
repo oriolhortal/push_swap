@@ -41,7 +41,7 @@ t_stack	*stackmin(t_stack *stack)
 
 void	index_stack(t_stack **a)
 {
-	int		i;
+	int		ix;
 	int		size;
 	t_stack	*tmp;
 	t_stack	*pivot;
@@ -50,15 +50,15 @@ void	index_stack(t_stack **a)
 	size = ft_stacksize(*a);
 	while (size-- > 0)
 	{
-		i = 0;
+		ix = 0;
 		tmp = *a;
 		while (tmp)
 		{
 			if (pivot->value > tmp->value)
-				i++;
+				ix++;
 			tmp = tmp->next;
 		}
-		pivot->index = i;
+		pivot->index = ix;
 		pivot = pivot->next;
 	}
 }

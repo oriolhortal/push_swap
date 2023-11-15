@@ -6,7 +6,7 @@
 /*   By: ohortal- <ohortal-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 13:36:07 by ohortal-          #+#    #+#             */
-/*   Updated: 2023/11/06 14:54:06 by ohortal-         ###   ########.fr       */
+/*   Updated: 2023/11/14 12:07:24 by ohortal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -26,7 +26,7 @@ void	caso4(t_stack **a, t_stack **b)
 {
 	pb(b, a);
 	caso3(a);
-	if ((*b)->value > (*a)->value)
+	if ((*b)->value < (*a)->value)
 		pa(a, b);
 	else if ((*b)->value > ft_stacklast(*a)->value)
 	{
@@ -72,7 +72,7 @@ void	parte2(t_stack **a, t_stack **b)
 
 void	caso5(t_stack **a, t_stack **b)
 {
-	pb(a, b);
+	pb(b, a);
 	caso4(a, b);
 	if ((*b)->value < (*a)->value)
 		pa(a, b);
